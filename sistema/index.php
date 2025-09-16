@@ -45,12 +45,16 @@
                             echo $data ?>
                     </td>
 
-                    <td><form action="atualizar.php" method="POST">
+                    <td>
+                        <form action="atualizar.php" method="POST">
                         <input type="submit" name="btEditar" value="Editar" class="btn btn-primary">
                     </form></td>
-                    
-                    <td><form action="excluir.php" method="POST"><input type="submit" name="btExcluir" value="Excluir" class="btn btn-danger">
-                </form></td>
+
+                    <td>
+                        <form action="excluir.php" method="POST">
+                            <input type="submit" name="btExcluir" value="Excluir" class="btn btn-danger">
+                    </form>
+                    </td>
 
                 </tr>
                 <?php } ?>
