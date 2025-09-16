@@ -47,12 +47,13 @@
 
                     <td>
                         <form action="atualizar.php" method="POST">
-                        <input type="submit" name="btEditar" value="Editar" class="btn btn-primary">
-                    </form></td>
+                        <button class="btn btn-primary" name="btEditar" value="<?php echo $linha['ID'];?>">Editar</button>
+                    </form>
+                    </td>
 
                     <td>
                         <form action="excluir.php" method="POST">
-                            <input type="submit" name="btExcluir" value="Excluir" class="btn btn-danger">
+                        <button class="btn btn-danger" name="btnExcluir" value="<?php echo $linha['ID'];?>">Excluir</button>
                     </form>
                     </td>
 
