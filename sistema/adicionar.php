@@ -5,7 +5,7 @@
     $email = $_POST['txtEmail'];
     $data = $_POST['txtData'];
 
-    $sql = $pdo->prepare("INSERT INTO Aluno (nome, email, data_nascimento) VALUES (?, ?, ?)");
+    $sql = $pdo->prepare("INSERT INTO ALUNOS (NOME, EMAIL, DATA_NASCIMENTO) VALUES (?, ?, ?)");
 
     $sql->execute([$nome, $email, $data]);
 
