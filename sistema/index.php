@@ -1,3 +1,8 @@
+<?php
+    include 'conexao.php';
+    $sql = $pdo->query("SELECT * FROM Alunos");
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,6 +14,8 @@
 </head>
 
 <body>
+   
+    
 
     <div class="container">
         <h1>Página Principal</h1>
@@ -17,20 +24,44 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                    <th scope="col">aluno</th>
+                    <th scope="col">E-mail</th>
+                    <th scope="col">Data de nascimento</th>
                 </tr>
             </thead>
             <tbody>
+                <?php
+                    while($linha = $sql->fetch(PDO::FETCH_ASSOC)){
+
+                 ?>        
+
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
+                    <th scope="row"><?php echo $linha['ID']?></th>
+                    <td><?php echo $linha['NOME']?></td>
+                    <td><?php echo $linha['EMAIL']?></td>
+                    <td><?php 
+                            $partes = explode('-', $linha['DATA_NASCIMENTO']);
+                            $data = "".$partes[2]."/".$partes[1]."/".$partes[0];
+                            echo $data ?></td>
                 </tr>
+                <?php } ?>
             </tbody>
         </table>
+
+    </div>
+    <div class="container"> 
+        <form action="adicionar.php" method="POST">
+        <input type="text" name="txtNome"
+        placeholder="Digite o nome do aluno..." required>
+
+        <input type="email" name="txtEmail"
+        placeholder="Digite o email do aluno.." required>
+        
+        <input type="text" name="txtData"
+        placeholder="Digite a data de nascimento do aluno..">
+
+        <input type="submit" value="Salvar" name="btnSalvar" class="btn btn-success">
+        </form>
     </div>
 </body>
 
