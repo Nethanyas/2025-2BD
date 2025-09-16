@@ -42,7 +42,16 @@
                     <td><?php 
                             $partes = explode('-', $linha['DATA_NASCIMENTO']);
                             $data = "".$partes[2]."/".$partes[1]."/".$partes[0];
-                            echo $data ?></td>
+                            echo $data ?>
+                    </td>
+
+                    <td><form action="atualizar.php" method="POST">
+                        <input type="submit" name="btEditar" value="Editar" class="btn btn-primary">
+                    </form></td>
+                    
+                    <td><form action="excluir.php" method="POST"><input type="submit" name="btExcluir" value="Excluir" class="btn btn-danger">
+                </form></td>
+
                 </tr>
                 <?php } ?>
             </tbody>
@@ -57,7 +66,7 @@
         <input type="email" name="txtEmail"
         placeholder="Digite o email do aluno.." required>
         
-        <input type="text" name="txtData"
+        <input type="date" name="txtData"
         placeholder="Digite a data de nascimento do aluno..">
 
         <input type="submit" value="Salvar" name="btnSalvar" class="btn btn-success">
