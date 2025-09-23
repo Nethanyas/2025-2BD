@@ -46,8 +46,8 @@
                     </td>
 
                     <td>
-                        <form action="atualizar.php" method="POST">
-                        <button class="btn btn-primary" name="btEditar" value="<?php echo $linha['ID'];?>">Editar</button>
+                        <form action="editar.php" method="POST">
+                        <button class="btn btn-primary" name="btnEditar" value="<?php echo $linha['ID'];?>">Editar</button>
                     </form>
                     </td>
 
